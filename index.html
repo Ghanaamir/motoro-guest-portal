@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motoro Guest WiFi</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.75);
+  max-width: 380px;
+  padding: 25px;
+  margin: 90px auto;
+  border-radius: 12px;
+}
+
+.logo {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input, button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  background: #cc0000;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #a00000;
+}
+
+.small {
+  font-size: 12px;
+  margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <img src="logo.png" class="logo" alt="Motoro Automotive Group">
+
+  <h3>Motoro Guest WiFi</h3>
+  <p>Please enter your name and email to continue.</p>
+
+  <!--
+    NOTE:
+    Right now this form just submits to a dummy URL (#).
+    To actually STORE the name/email somewhere, you will plug in
+    a Formspree / Google Sheets / webhook URL as the "action".
+  -->
+
+  <form method="POST" action="#">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <button type="submit" onclick="goToReview(); return false;">Connect</button>
+
+    <p class="small">
+      By tapping Connect you agree to use this network for lawful purposes only.
+    </p>
+  </form>
+</div>
+
+<script>
+// After "Connect", send the user to Motoro's Google reviews.
+// Replace this URL with the exact review link once you have it.
+function goToReview() {
+  window.location.href = 'https://www.google.com/maps/search/Motoro+Automotive+Group+Orlando+FL/';
+}
+</script>
+
+</body>
+</html>
